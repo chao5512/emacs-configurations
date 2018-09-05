@@ -23,4 +23,17 @@
 ;;remember
 (global-set-key (kbd "C-c r") 'org-capture)
 
+;;format short break
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
+;;hippie-expand to improve campany-mode
+(global-set-key (kbd "s-/") 'hippie-expand)
+
+;; direct load Dired Mode
+;; (require 'dired)
+;; (defined-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+;; delay load
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
 (provide 'init-keybindings)
