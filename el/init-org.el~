@@ -1,8 +1,0 @@
-;;for org
-
-(require 'org)
-(setq org-src-fontify-natively 1)
-;; set agenda file dir
-(setq org-agenda-files '("~/org"))
-(global-set-key (kbd "C-c a") 'org-agenda)
-(provide 'init-org)

@@ -10,7 +10,4 @@
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
 
-;;remember
-(global-set-key (kbd "C-c r") 'org-capture)
-
 (provide 'init-org)

@@ -17,4 +17,10 @@
 ;;8388699 commond+[
 (global-set-key [8388699] (quote recentf-open-files))
 
+;;short break for counsel-git
+(global-set-key (kbd "C-c p f") 'counsel-git)
+
+;;remember
+(global-set-key (kbd "C-c r") 'org-capture)
+
 (provide 'init-keybindings)
