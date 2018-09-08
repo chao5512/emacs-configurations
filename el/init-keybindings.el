@@ -29,6 +29,15 @@
 ;;hippie-expand to improve campany-mode
 (global-set-key (kbd "s-/") 'hippie-expand)
 
+;;search and edit
+(global-set-key (kbd "M-s o") 'occur-dwim)
+
+;;scale text
+;;C-=
+(global-set-key [8388669] (quote text-scale-increase))
+;;C--
+(global-set-key [8388653] (quote text-scale-decrease))
+
 ;; direct load Dired Mode
 ;; (require 'dired)
 ;; (defined-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)

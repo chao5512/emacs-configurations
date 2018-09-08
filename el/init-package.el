@@ -10,9 +10,9 @@
 ;; Add Packages
 (defvar my/packages '(
 		      ;; --- Auto-completion ---
-		      company
+		      ;;company
 		      ;; --- Better Editor ---
-		      hungry-delete
+		      ;;hungry-delete
 		      swiper
 		      counsel
 		      ;;smex
@@ -28,6 +28,10 @@
 		      popwin
 		      ;; open current file in finder directly
 		      reveal-in-osx-finder
+		      ;; try package
+		      try
+		      ;; keys tips
+		      which-key
 		      ) "Default packages")
 
 (setq package-selected-packages my/packages)
@@ -45,12 +49,17 @@
 	 (package-install pkg))))
 
 ;;---------------------------------configurations------------------------------------
-;;config for company mode 
-(add-hook 'emacs-lisp-mode-hook 'company-mode)
+;;config for company mode
+(use-package company 
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'company-mode))
 
 ;;config for hungry-delete
-(require 'hungry-delete)
-(global-hungry-delete-mode)
+(use-package hungry-delete
+  :config
+  (global-hungry-delete-mode))
+;;(require 'hungry-delete)
+;;(global-hungry-delete-mode)
 
 ;; config for swiper
 (ivy-mode 1)
@@ -72,5 +81,33 @@
 ;;config for popwin
 (require 'popwin)
 (popwin-mode 1)
+
+(unless (package-installed-p 'use-package)
+	(package-refresh-contents)
+	(package-install 'use-package))
+;;config for try and which-keys
+(use-package try
+  :ensure t)
+
+(use-package which-key
+	:ensure t 
+	:config
+	(which-key-mode))
+;;org-bullets
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;;cross multiple window
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0))))) 
+    ))
 ;;--------------------------------configurations--------------------------------------
 (provide 'init-package)

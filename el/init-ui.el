@@ -11,4 +11,9 @@
 
 (setq-default cursor-type 'bar)
 
+;;init themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+;;(load-theme)
+
 (provide 'init-ui)
