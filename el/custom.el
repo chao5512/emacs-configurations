@@ -3,8 +3,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-global-modes t)
  '(company-idle-delay 0.08)
  '(company-minimum-prefix-length 1)
+ '(global-company-mode t)
  '(package-selected-packages
    (quote
     (ace-window org-bullets which-key use-package company hungry-delete swiper counsel smartparens exec-path-from-shell monokai-theme popwin reveal-in-osx-finder try)))
@@ -36,4 +38,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))

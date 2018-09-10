@@ -24,6 +24,10 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t))
+;; config for avy
+(use-package avy
+  :ensure t
+  :bind ("s-f" . avy-goto-char))
 
 ;;config for smartparents
 (use-package smartparens
