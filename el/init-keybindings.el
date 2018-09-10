@@ -12,7 +12,8 @@
 
 ;;8388699 commond+]
 (global-set-key [8388701] (quote open-my-init-file))
-
+;;C-.
+(global-set-key [67108910] (quote set-mark-command))
 
 ;;8388699 commond+[
 (global-set-key [8388699] (quote recentf-open-files))
