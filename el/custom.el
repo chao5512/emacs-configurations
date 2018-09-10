@@ -14,7 +14,7 @@
  '(global-company-mode t)
  '(package-selected-packages
    (quote
-    (ace-window org-bullets which-key use-package company hungry-delete swiper counsel smartparens exec-path-from-shell monokai-theme popwin reveal-in-osx-finder try)))
+    (org-plus-contrib org ox-reveal htmlize ace-window org-bullets which-key use-package company hungry-delete swiper counsel smartparens exec-path-from-shell monokai-theme popwin reveal-in-osx-finder try)))
  '(popwin:special-display-config
    (quote
     (("*Miniedit Help*" :noselect t)
