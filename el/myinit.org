@@ -1,0 +1,38 @@
+#+STARTUP: overview
+* interface tweaks
+* sub-config file path
+  add customize load path
+
+  #+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "~/.emacs.d/el")
+  #+END_SRC
+* some useful func
+** 打开我的配置文件
+   #+BEGIN_SRC emacs-lisp
+  (defun open-my-init-file()
+    (interactive)
+    (find-file "~/.emacs.d/el/myinit.el"))
+   #+END_SRC
+** about occur and i dont understand
+   #+BEGIN_SRC emacs-lisp
+     (defun occur-dwim ()
+       "Call `occur' with a sane default."
+       (interactive)
+       (push (if (region-active-p)
+		 (buffer-substring-no-properties
+		  (region-beginning)
+		  (region-end))
+	       (let ((sym (thing-at-point 'symbol)))
+		 (when (stringp sym)
+		   (regexp-quote sym))))
+	     regexp-history)
+       (call-interactively 'occur))
+   #+END_SRC 
+* try
+* which key
+* Org mode
+* Ace windows for easy window switching
+* Swiper / Ivy / Counsel
+* Avy - navigate by searching for a letter on the screen and jumping to it
+* Autocomplete
+* Themes
